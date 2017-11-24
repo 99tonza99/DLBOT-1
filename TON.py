@@ -18,7 +18,7 @@ ki.login(qr=True)
 ki.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(qr=True)
+kc.login(qr=True) 
 kc.loginResult()
 
 kd = LINETCR.LINE()
@@ -204,25 +204,7 @@ def bot(op):
             if op.param2 in Bots:
                 return
             kk.sendText(op.param1, "Ciee Kakak Gabetah")
-            print "Anggota Keluar"
-
-        #------Open QR Kick start------#
-        if op.type == 11:
-           if wait["ProtectQR"] == True:
-               if op.param2 not in Bots:
-                   G = cl.getGroup(op.param1)
-                   G.preventJoinByTicket = True
-                   random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                   cl.updateGroup(G)
-        #------Open QR Kick finish-----#
-
-        #------Invite User Kick start------#
-        if op.type == 13:
-           if wait["Protectguest"] == True:
-               if op.param2 not in Bots:
-                  random.choice(KAC).cancelGroupInvitation(op.param1,[op.param3])
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-        #------Invite User Kick Finish------#
+            print "Anggota Kel"
         
         if op.type == 13:
                 if op.param3 in mid:
@@ -570,11 +552,7 @@ def bot(op):
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
                 
-        #------Cancel User Kick start------#
-        if op.type == 32:
-            if op.param2 not in Bots:
-               cl.kickoutFromGroup(op.param1,[op.param2])
-        #-----Cancel User Kick Finish------#
+       
         
         if op.type == 25:
             msg = op.message
@@ -2513,9 +2491,9 @@ def bot(op):
             elif msg.text in ["Creator"]:
               if msg.from_ in admin:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': 'ub747db128c45151391e8bef56abba014'}
+                msg.contentMetadata = {'mid': 'u0085b75fb3d15b36647a8a01101fe847'}
                 cl.sendMessage(msg)
-                cl.sendText(msg.to,"Powered By DL")         
+                cl.sendText(msg.to,"Powered By TON")         
 #-----------------------------------------------
             elif "Bc " in msg.text:
               if msg.from_ in admin:
@@ -2591,8 +2569,8 @@ def bot(op):
 #-----------------------------------------------	
             elif msg.text in ["Owner"]:
               if msg.from_ in admin: 
-                cl.sendText(msg.to,"BOT By DL Leo twitter.com/leonndhar")
-                cl.sendText(msg.to,"BOT By DL Leo instagram.com/leonndhar")                
+                cl.sendText(msg.to,"BOT By ⭐⭐TON⭐⭐👈http://line.me/ti/p/K_CcmJ9rX1")
+                cl.sendText(msg.to,"BOT By ⭐⭐TON⭐⭐👈http://line.me/ti/p/K_CcmJ9rX1")                
 #-----------------------------------------------	
             elif msg.text in ["Absen"]:
               if msg.from_ in admin: 
