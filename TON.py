@@ -6,54 +6,54 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(token='Em2PGoMbLdkiILJyfQp4.T0FBeOXffror6l71ARUGfa.VJbY3dKIHFBDuTF0Cd2rFKCfBPwpJjJOdLeTi9kwXU4=')
+cl.login(qr=True)
 cl.loginResult()
 
 kk = LINETCR.LINE()
-kk.login(token='EleLXmk60FGj1K15QFb5.vvEmC4HVgEJEc/dUS4btTq.FZGaDjoCBtMTbzoUb+bvAQTigoyTpnN6ZGIDNbRpExU=')
+kk.login(qr=True)
 kk.loginResult()
 
-ki = LINETCR.LINE()
-ki.login(token='ElSG2wDhHmRPBcQX6jte.VNgdNhqShk+BX5zaT90qlG.oeF4/JSErojrCyhlHBGEgWQolTaXXYPaZ3UrWQVZUWw=')
+ki = LINETCR LINE ()
+ki.login(qr=True)
 ki.loginResult()
 
 kc = LINETCR.LINE()
-kc.login(token='ElwvDNiko4rl9xC5tZdb.hBY/zBeTVO2e2Kcv/WM7MW.5TmnHoDHA+ceyo2hUZMalzSlJ+bUASGAOthbDLVR7eo=')
+kc.login(qr=True)
 kc.loginResult()
 
 kd = LINETCR.LINE()
-kd.login(token='ElJPfgYkFWLshm1Vefu0.ItxEai7JQj0lTNz5ZD2iCa.jWUr0M6b2JPEgszuX5JeRl2fyfM+5+ZY9m3nkx+B/OU=')
+kd.login(qr=True)
 kd.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token='ElSNUW6GW42uCwtGUqt8.7FTR7Il/fxDwU1UlVQSCAa.xB7hqBifwUbBmUz/zt7Ox4+HdNuZS+ok32zBRX4pm0U=')
+ke.login(qr=True)
 ke.loginResult()
 
 kf = LINETCR.LINE()
-kf.login(token='ElY49Rcn4W1JxYmCxE30.jLPI992GK3t4IF51ZuoyOa.iJP0MVlbNR8nqDXn1KtMAJquBAKFPbbKURjI6omhteo=')
+kf.login(qr=True)
 kf.loginResult()
 
 kg = LINETCR.LINE()
-kg.login(token='Elum7AXQtTSJKuLJWX64.XViK/pKuW7fRSzGlqN9i5a.bhtMS2N8opkqFvZnT0wKWHAgr2zw2z8ILoQuXWgP2Jg=')
+kg.login(qr=True)
 kg.loginResult()
 
 kh = LINETCR.LINE()
-kh.login(token='ElDoB8Z0h6Cs38U1Alv4.wTCNMNlIX49moY8SabhyTa.p3OO2Q+FxCwMZJ6kJTY1oTjPja5+NrDZeJTqhX0H1Jw=')
+kh.login(qr=True)
 kh.loginResult()
 
 kj = LINETCR.LINE()
-kj.login(token='EldqqDr1tBeBZZoWc0Tc.TFxWXmMA1MDpw3BgR9fA3a.KZZB3C49F/OYjrqDJkmA/a8TKv/5fuYyPe9kLtLaCtY=')
+kj.login(qr=True)
 kj.loginResult()
 
 kl = LINETCR.LINE()
-kl.login(token='ElkW8wWcXDVffRKW3dM8.kd9O+YUplyLQIl5HShl6/a.uSZQmWMqoBfJ8s0dzaJzdaf75hAWbEMzckD7i4g4mUA=')
+kl.login(qr=True)
 kl.loginResult()
 
 print "BOT Siap"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage ="""         ♻♻♻ DL BOT ♻♻♻
+helpMessage ="""         ♻♻♻ By.TON Seft BOT ♻♻♻
 
 ➡ Me/Kontak Tiap Bot
 ➡ Mid/Mid Tiap Bot
@@ -98,7 +98,7 @@ helpMessage ="""         ♻♻♻ DL BOT ♻♻♻
 ➡ Protect Invite
 ➡ Cek Mid Kirim Kontak
 ➡ Auto Text Join/Leave/Kick
-
+       ⭐⭐TON⭐⭐👈\n\nhttp://line.me/ti/p/K_CcmJ9rX1
 """
 KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl]
 mid = cl.getProfile().mid
@@ -114,7 +114,7 @@ Imid = kj.getProfile().mid
 Jmid = kl.getProfile().mid
 
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Jmid]
-admin=["ub747db128c45151391e8bef56abba014"]
+admin=["u0085b75fb3d15b36647a8a01101fe847"]
 wait = {
     'contact':True,
     'autoJoin':True,
@@ -122,9 +122,9 @@ wait = {
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':False,
-    'message':"Makasih Kak Udah Add Saya",
+    'message':"👉Auto Like by ⭐⭐TON⭐⭐👈\n\nhttp://line.me/ti/p/K_CcmJ9rX1 ",
     "lang":"JP",
-    "comment":"Makasih Kak Udah Add Saya",
+    "comment":"👉Auto Like by ⭐⭐TON⭐⭐👈\n\nhttp://line.me/ti/p/K_CcmJ9rX1 ",
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
