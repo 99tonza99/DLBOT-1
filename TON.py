@@ -9,13 +9,13 @@ cl = LINETCR.LINE()
 cl.login(qr=True)
 cl.loginResult()
 
-kk = LINETCR.LINE()
+ki = LINETCR.LINE()
+ki.login(qr=True)
+k.loginResult()
+
+kk = LINETCR LINE ()
 kk.login(qr=True)
 kk.loginResult()
-
-ki = LINETCR LINE ()
-ki.login(qr=True)
-ki.loginResult()
 
 kc = LINETCR.LINE()
 kc.login(qr=True) 
