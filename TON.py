@@ -568,7 +568,7 @@ def bot(op):
                elif "เอาโปรไฟล์" in msg.text:
                 if msg.toType == 2:
                     msg.contentType = 0
-                    steal0 = msg.text.replace("Hack2 ","")
+                    steal0 = msg.text.replace("เอาไฟล์ ","")
                     steal1 = steal0.lstrip()
                     steal2 = steal1.replace("@","")
                     steal3 = steal2.rstrip()
@@ -661,7 +661,27 @@ def bot(op):
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-
+            elif "เอาปก @" in msg.text:
+                print "[Command]dp executing"
+                _name = msg.text.replace("เอาปก @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                    cl.sendText(msg.to,"Contact not found")
+                else:
+                    for target in targets:
+                        try:
+                            contact = cl.getContact(target)
+                            cu = cl.channel.getCover(target)
+                            path = str(cu)
+                            cl.sendImageWithURL(msg.to, path)
+                        except:
+                            pass
+                print "[Command]dp executed"
             elif "Mid @" in msg.text:
                 _name = msg.text.replace("Mid @","")
                 _nametarget = _name.rstrip(' ')
