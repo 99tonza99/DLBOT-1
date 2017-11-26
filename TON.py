@@ -887,6 +887,67 @@ def bot(op):
                                 cl.sendText(msg.to,"Upload image failed.")
 #----------------------------------------------------------------------------
 
+#------------------ KICK OUT FORM GROUP
+        if op.type == 19:
+            if op.param2 in Bots:
+                return
+            cl.sendText(op.param1,cl.getContact(op.param2).displayName + " จัดหนักจัดเต็มเนาะ")
+            print "MEMBER KICK OUT FORM GROUP"
+# ----------------- NOTIFED MEMBER JOIN GROUP
+        if op.type == 17:
+            if op.param2 in bot1:
+                return
+            ginfo = cl.getGroup(op.param1)
+            cl.sendText(op.param1, "ยินดีต้อนรับ 😊" + cl.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈")
+            print "MEMBER HAS JOIN THE GROUP"
+
+#-----------------------------------------------------------
+            elif msg.text == "ตั้ง":
+                    cl.sendText(msg.to, "Check Yang nyimak")
+                    try:
+                        del wait2['readPoint'][msg.to]
+                        del wait2['readMember'][msg.to]
+                    except:
+                        pass
+                    now2 = datetime.now()
+                    wait2['readPoint'][msg.to] = msg.id
+                    wait2['readMember'][msg.to] = ""
+                    wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
+                    wait2['ROM'][msg.to] = {}
+                    print wait2
+
+            elif msg.text == "อ่าน":
+                    if msg.to in wait2['readPoint']:
+                        if wait2["ROM"][msg.to].items() == []:
+                            chiya = ""
+                        else:
+                            chiya = ""
+                            for rom in wait2["ROM"][msg.to].items():
+                                print rom
+                                chiya += rom[1] + "\n"
+                        cl.sendText(msg.to,"======Tercyduck====== %s\n=====Tukang Ngintip======\n%s\nReading point creation date n time:\n[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                    else:
+                         cl.sendText(msg.to,"An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")
+
+
+#-----------------------------------------------------------
+#--------------------------------- YOUTUBE ----------------------------------
+            elif "youtube " in msg.text:
+                query = msg.text.replace("youtube ","หาหนัง")
+                with requests.session() as s:
+                    s.headers['user-agent'] = 'Mozilla/5.0'
+                    url = 'http://www.youtube.com/results'
+                    params = {'search_query': query}
+                    r = s.get(url, params=params)
+                    soup = BeautifulSoup(r.content, 'html5lib')
+                    hasil = ""
+                    for a in soup.select('.yt-lockup-title > a[title]'):
+                        if '&list=' not in a['href']:
+                            hasil += ''.join((a['title'],'\nhttp://www.youtube.com' + a['href'],'\n\n'))
+                    cl.sendText(msg.to,hasil)
+                    print '[Command] Youtube Search'
+#----------------------------------------------------------------------------
+
 
                 if wait["winvite"] == True:
                      if msg.from_ in admin:
@@ -985,7 +1046,7 @@ def bot(op):
             elif "Copy @" in msg.text:
             	if msg.from_ in admin:
                    print "[COPY] Ok"
-                   _name = msg.text.replace("Leo Copy @","")
+                   _name = msg.text.replace("Copy @","")
                    _nametarget = _name.rstrip('  ')
                    gs = cl.getGroup(msg.to)
                    targets = []
