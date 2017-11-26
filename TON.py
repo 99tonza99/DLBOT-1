@@ -893,7 +893,19 @@ def bot(op):
                         k3.sendText(msg.to,"Can not be used outside the group")
                     else:
                         k3.sendText(msg.to,"Not for use less than group")
-                        
+            #-----------------------------------------------
+            elif ".Youtube " in msg.text:
+                 query = msg.text.replace(".Youtube ","")
+                 with requests.session() as s:
+                     s.headers['user-agent'] = 'Mozilla/5.0'
+                     url    = 'http://www.youtube.com/results'
+                     params = {'search_query': query}
+                     r    = s.get(url, params=params)
+                     soup = BeautifulSoup(r.content, 'html5lib')
+                     for a in soup.select('.yt-lockup-title > a[title]'):
+                         if '&List' not in a['href']:
+                               cl.sendText(msg.to,'http://www.youtube.com' + a['href'] + a['title'])
+#-----------------------------------------------            
         #---------------Fungsi Gcreator Start---------------#
             elif msg.text in ["Gcreator"]:
               if msg.from_ in admin:
