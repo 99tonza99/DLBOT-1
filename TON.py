@@ -280,7 +280,7 @@ def bot(op):
                     cl.cancelGroupInvitation(op.param1, matched_list)
                     
         #-----------------NOTIFED MEMBER KICKOUT GROUP
-        if op.type == 19:
+        if op.type == 1002:
             if op.param2 in Bots:
                 return
             kk.sendText(op.param1,cl.getContact(op.param2).displayName + " Hayoo Kakak Ngapain")
@@ -333,7 +333,7 @@ def bot(op):
                
         #------FUNGSI KICK USER YANG NGEKICK-------
 
-        if op.type == 19:
+        if op.type == 700:
             if op.param2 not in admin:
                  kk.kickoutFromGroup(op.param1,[op.param2])
                  wait["blacklist"][op.param2] = True
@@ -845,6 +845,47 @@ def bot(op):
                       cl.sendText(msg.to, "Group Creator : " + gCreator1)
                       cl.sendMessage(msg)
         #----------------Fungsi Gcreator Finish--------------#
+         #-------------------------------- PP BY TAG ---------------------------------
+            elif "pp @" in msg.text:
+                if msg.toType == 2:
+                    cover = msg.text.replace("pp @","")
+                    _nametarget = cover.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Not found")
+                    else:
+                        for target in targets:
+                            try:
+                                h = cl.getContact(target)
+                                cl.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + h.pictureStatus)
+                            except Exception as error:
+                                print error
+                                cl.sendText(msg.to,"Upload image failed.")
+
+            elif "Pp @" in msg.text:
+                if msg.toType == 2:
+                    cover = msg.text.replace("Pp @","")
+                    _nametarget = cover.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Not found")
+                    else:
+                        for target in targets:
+                            try:
+                                h = cl.getContact(target)
+                                cl.sendImageWithURL(msg.to,"http://dl.profile.line-cdn.net/" + h.pictureStatus)
+                            except Exception as error:
+                                print error
+                                cl.sendText(msg.to,"Upload image failed.")
+#----------------------------------------------------------------------------
 
 
                 if wait["winvite"] == True:
@@ -941,7 +982,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
 
-            elif "Leo Copy @" in msg.text:
+            elif "Copy @" in msg.text:
             	if msg.from_ in admin:
                    print "[COPY] Ok"
                    _name = msg.text.replace("Leo Copy @","")
@@ -1941,7 +1982,7 @@ def bot(op):
               else:
                 cl.sendText(msg.to,"Gagal Mengubah Nama")
                 
-            elif "Leo Add @" in msg.text:
+            elif "Add @" in msg.text:
                 if msg.from_ in owner:
                     print "Menambah Anggota Bot"
                     _name = msg.text.replace("Leo Add @","")
@@ -1969,7 +2010,7 @@ def bot(op):
                     cl.sendText(msg.to,"Gagal")
                     cl.sendText(msg.to,"Butuh Izin Dari Pemilik")
 
-            elif "Leo Remove @" in msg.text:
+            elif "Remove @" in msg.text:
                 if msg.from_ in admin:
                     print "Staff Bot Dieksekusi"
                     _name = msg.text.replace("Leo Remove @","")
@@ -2215,7 +2256,7 @@ def bot(op):
 
 #-----------------------------------------------
 	
-            elif msg.text in ["Keluar"]:
+            elif msg.text in ["เชค"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -2232,14 +2273,14 @@ def bot(op):
                         kc.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Angel Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         ki.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Shani Angel Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -2247,63 +2288,63 @@ def bot(op):
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Shani Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Yona Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kc.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Aya Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kd.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Devi Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         ke.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Celine Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kf.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Cinhap Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kg.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Jinan Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kh.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Yupi Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kj.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Kyla Keluar"]:
+            elif msg.text in ["มาครับ"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -2311,7 +2352,7 @@ def bot(op):
                     except:
                         pass
 #-----------------------------------------------
-            elif msg.text in ["Mentionall"]:
+            elif msg.text in ["Tagall"]:
               if msg.from_ in admin:
                 group = cl.getGroup(msg.to)
                 nama = [contact.mid for contact in group.members]
