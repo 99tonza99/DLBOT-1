@@ -2126,7 +2126,7 @@ def bot(op):
                 msgs+="\n\nTotal %i Blocked User(s)" % len(kontak)
                 cl.sendText(msg.to, msgs)                                
                 
-            elif msg.text in ["งง"]:
+            elif msg.text in ["tonjoin"]:
               if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
@@ -2283,7 +2283,7 @@ def bot(op):
 
 #-----------------------------------------------
 	
-            elif msg.text in ["เชค"]:
+            elif msg.text in ["tonbye"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -2856,12 +2856,12 @@ def bot(op):
                 kj.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
                 kl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
 #-----------------------------------------------
-            elif msg.text in ["Sp"]:
-              if msg.from_ in admin: 
+            elif msg.text in ["sp","Sp","Speed"]:
                 start = time.time()
-                cl.sendText(msg.to, "Tunggu")
+                print("sp")
                 elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%s Detik" % (elapsed_time))
+                cl.sendText(msg.to, "ʟᴏᴀᴅɪɴɢ....")
+                cl.sendText(msg.to, "%sต่อวินาที" % (elapsed_time))
 #------------------------------------------------------------------
             elif msg.text in ["Ban"]:
               if msg.from_ in admin: 
