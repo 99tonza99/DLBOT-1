@@ -98,6 +98,7 @@ helpMessage ="""         ♻♻♻ By.TON Seft BOT ♻♻♻
 ➡ Protect Invite
 ➡ Cek Mid Kirim Kontak
 ➡ Auto Text Join/Leave/Kick
+       
        ⭐⭐TON⭐⭐👈\n\nhttp://line.me/ti/p/K_CcmJ9rX1
 """
 KAC=[cl,ki,kk,kc,kd,ke,kf,kg,kh,kj,kl]
@@ -2409,7 +2410,39 @@ def bot(op):
                     profile_B.statusMessage = string
                     ki.updateProfile(profile_B)
                     ki.sendText(msg.to,"display message " + string + " done")
-            
+            elif "เอาโปรไฟล์" in msg.text:
+                if msg.toType == 2:
+                    msg.contentType = 0
+                    steal0 = msg.text.replace("Hack2 ","")
+                    steal1 = steal0.lstrip()
+                    steal2 = steal1.replace("@","")
+                    steal3 = steal2.rstrip()
+                    _name = steal3
+                    group = cl.getGroup(msg.to)
+                    targets = []
+                    for g in group.members:
+                        if _name == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Gak da orange")
+                    else:
+                        for target in targets:
+                            try:
+                                contact = cl.getContact(target)
+                                try:
+                                    image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                                except:
+                                    image = "https://www.1and1.co.uk/digitalguide/fileadmin/DigitalGuide/Teaser/not-found-t.jpg"
+                                try:
+                                    cl.sendImageWithURL(msg.to,image)
+                                except Exception as error:
+                                    cl.sendText(msg.to,(error))
+                                    pass
+                            except:
+                                cl.sendText(msg.to,"Error!")
+                                break
+                else:
+                    cl.sendText(msg.to,"Tidak bisa dilakukan di luar grup")
             elif msg.text in ["Kill"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
