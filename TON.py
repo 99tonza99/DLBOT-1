@@ -2301,14 +2301,14 @@ def bot(op):
                         kc.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ0"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         ki.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ1"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -2316,63 +2316,63 @@ def bot(op):
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ2"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ3"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kc.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ4"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kd.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ5"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         ke.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ6"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kf.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ7"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kg.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ8"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kh.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ9"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kj.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["มาครับ"]:
+            elif msg.text in ["มาครับ10"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -2402,7 +2402,27 @@ def bot(op):
                     cl.sendMessage(msg)
                 except Exception as error:
                     print error
-                    
+            elif "เอาปก @" in msg.text:
+                print "[Command]dp executing"
+                _name = msg.text.replace("Hack3 @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                    cl.sendText(msg.to,"Contact not found")
+                else:
+                    for target in targets:
+                        try:
+                            contact = cl.getContact(target)
+                            cu = cl.channel.getCover(target)
+                            path = str(cu)
+                            cl.sendImageWithURL(msg.to, path)
+                        except:
+                            pass
+                print "[Command]dp executed"       
             elif "K1 upstatus: " in msg.text:
                 string = msg.text.replace("K1 upstatus: ","")
                 if len(string.decode('utf-8')) <= 500:
