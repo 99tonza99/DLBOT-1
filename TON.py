@@ -2062,7 +2062,7 @@ def bot(op):
                 msgs+="\n\nTotal %i Blocked User(s)" % len(kontak)
                 cl.sendText(msg.to, msgs)                                
                 
-            elif msg.text in ["Masuk"]:
+            elif msg.text in ["งง"]:
               if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
@@ -2515,18 +2515,18 @@ def bot(op):
 #-----------------------------------------------
             elif msg.text in ["Test"]:
               if msg.from_ in admin:
-                kk.sendText(msg.to,"Masih Siap Kak")
-                ki.sendText(msg.to,"Masih Siap Kak")
-                kd.sendText(msg.to,"Masih Siap Kak")
-                ke.sendText(msg.to,"Masih Siap Kak")
-                kf.sendText(msg.to,"Masih Siap Kak")
-                kg.sendText(msg.to,"Masih Siap Kak")
-                kh.sendText(msg.to,"Masih Siap Kak")
-                kj.sendText(msg.to,"Masih Siap Kak")
-                kl.sendText(msg.to,"Masih Siap Kak")
-                kc.sendText(msg.to,"Masih Siap Kak")
+                kk.sendText(msg.to,"มาครับ")
+                ki.sendText(msg.to,"มาครับ")
+                kd.sendText(msg.to,"มาครับ")
+                ke.sendText(msg.to,"มาครับ")
+                kf.sendText(msg.to,"มาครับ")
+                kg.sendText(msg.to,"มาครับ")
+                kh.sendText(msg.to,"มาครับ")
+                kj.sendText(msg.to,"มาครับ")
+                kl.sendText(msg.to,"มาครับ")
+                kc.sendText(msg.to,"มาครับ")
                 
-            elif msg.text in ["Baris"]:
+            elif msg.text in ["นับ"]:
               if msg.from_ in admin:
                 kk.sendText(msg.to,"1")
                 ki.sendText(msg.to,"2")
